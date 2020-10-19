@@ -163,7 +163,7 @@ class RevealBase extends React.Component {
 
   collapse(state, props, inOut) {
     const total = inOut.duration + (props.cascade ? inOut.duration : 0),
-          height = this.isOn ? this.getDimensionValue() : 0;
+          opacity = this.isOn ? 1 : 0;
     let duration, delay;
     if (props.collapseOnly) {
       duration = inOut.duration/3;
@@ -182,8 +182,8 @@ class RevealBase extends React.Component {
           //duration = total;
           //delay = inOut.delay;
     state.collapse = {
-      height,
-      transition: `height ${duration}ms ease ${delay}ms`,// padding ${duration}ms ease ${delay}ms, border ${duration}ms ease ${delay}ms`,
+      opacity,
+      transition: `opacity ${duration}ms ease ${delay}ms`,// padding ${duration}ms ease ${delay}ms, border ${duration}ms ease ${delay}ms`,
       overflow: props.collapseOnly ? 'hidden' : undefined,
       //margin: 0, padding: 0, border: '1px solid transparent',
       //boxSizing: 'border-box',
