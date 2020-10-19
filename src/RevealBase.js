@@ -311,7 +311,7 @@ class RevealBase extends React.Component {
       this.isShown = true;
       this.setState({
         hasAppeared: true,
-        collapse: this.props.collapse ? { height: this.getDimensionValue() } : this.state.collapse,
+        collapse: this.props.collapse ? { opacity: 1 } : this.state.collapse,
         style: { opacity: 1,}
       });
       this.onReveal(this.props);
@@ -365,7 +365,7 @@ class RevealBase extends React.Component {
 
   static getInitialCollapseStyle(props) {
     return {
-          height: 0,
+          opacity: 0,
           visibility: props.when  ? void 0 : 'hidden',
     };
   }
